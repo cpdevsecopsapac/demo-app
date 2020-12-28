@@ -19,6 +19,12 @@ Image-Scan:
   script:
     - shiftleft image-scan -i release/demo-app-image.tar -nc
 
+Iac-Assessment:
+  stage: tests
+  image: checkpoint/shiftleft:latest
+  script:
+    - shiftleft -D iac-assessment -p ./terraform-template -r -64 -s critical
+
 DockerBuild:
   stage: build
   image: docker:latest
