@@ -7,6 +7,12 @@ stages:
   - build
   - tests
 
+Code-Scan:
+  stage: tests
+  image: checkpoint/shiftleft:latest
+  script:
+    - shiftleft code-scan -s ./ -nc
+
 Image-Scan:
   stage: tests
   image: checkpoint/shiftleft:latest
