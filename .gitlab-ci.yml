@@ -6,18 +6,6 @@ services:
 stages:
   - build
   - tests
-   
-Code-Scan:
-  stage: tests
-  image: checkpoint/shiftleft:latest
-  script:
-    - shiftleft code-scan -s ./
-
-Iac-Assessment:
-  stage: tests
-  image: checkpoint/shiftleft:latest
-  script:
-    - shiftleft -D iac-assessment -p ./terraform-template -r -64 -s critical
 
 Image-Scan:
   stage: tests
