@@ -6,4 +6,4 @@ app = Flask(__name__)
 def main():
     raise Exception()
  
-app.run(debug=True)
+app.run(debug=False)
