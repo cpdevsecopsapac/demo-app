@@ -1,5 +1,9 @@
 FROM alpine:latest
 
+RUN apk del musl
+
+RUN apk del musl-utils
+
 ARG SG_CLIENT_ID
 ARG SG_SECRET_KEY
 
